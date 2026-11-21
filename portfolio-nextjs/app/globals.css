@@ -538,3 +538,27 @@ body { transition: background-color .25s ease, color .25s ease; }
 .timeline-group .entry-top > span { font-size: 9px; }
 @media (max-width: 900px) { .timeline-column { grid-template-columns: repeat(2, minmax(0, 1fr)); }.timeline-group { padding: 21px 18px; } }
 @media (max-width: 640px) { .about-layout { padding-top: 25px; }.timeline-column { grid-template-columns: 1fr; gap: 12px; }.timeline-group { gap: 17px; padding: 19px 17px; }.timeline-group .group-label h3 { font-size: 13px; } }
+
+/* Keep the hero content inside narrow phone screens. */
+@media (max-width: 640px) {
+  .hero-inner,
+  .hero-copy,
+  .hero-name-row,
+  .hero-lead,
+  .hero-actions,
+  .hero-meta,
+  .hero-art { min-width: 0; width: 100%; }
+  .hero-inner { gap: 32px; }
+  .hero-name-row { gap: clamp(8px, 2.5vw, 12px); }
+  .hero-name-row h1 { flex: 1 1 auto; min-width: 0; font-size: clamp(38px, 12.2vw, 50px); }
+  .hero-portrait { flex: 0 0 clamp(62px, 18vw, 76px); width: clamp(62px, 18vw, 76px); height: clamp(82px, 23vw, 102px); }
+  .hero-lead { max-width: none; }
+  .hero-actions { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .hero-social-actions { width: 100%; justify-content: flex-start; gap: clamp(12px, 4vw, 20px); }
+  .hero-social-actions .text-link { white-space: nowrap; }
+  .hero-meta { max-width: none; gap: 8px; }
+  .hero-meta span:first-child { max-width: 72%; }
+  .hero-art { max-width: none; transform: none; }
+  .art-stamp { right: 10px; }
+  .hero-bottom { width: calc(100% - 40px); }
+}
