@@ -47,7 +47,7 @@ export default async function Home() {
           <div className="hero-art" aria-label="Code editor showing a software engineering profile">
             <div className="art-topbar"><div className="window-dots"><i /><i /><i /></div><span>fahim.config.js</span><span className="art-live">● LIVE PROFILE</span></div>
             <div className="art-body"><div className="line-numbers">01<br />02<br />03<br />04<br />05<br />06<br />07<br />08<br />09</div><pre><span className="code-purple">const</span> <span className="code-blue">developer</span> = {'{'}<br />&nbsp; name: <span className="code-green">&apos;Muhammad Fahim&apos;</span>,<br />&nbsp; degree: <span className="code-green">&apos;Software Engineering&apos;</span>,<br />&nbsp; cgpa: <span className="code-orange">3.76</span>,<br />&nbsp; focus: [<br />&nbsp;&nbsp; <span className="code-green">&apos;full-stack&apos;</span>,<br />&nbsp;&nbsp; <span className="code-green">&apos;mobile development&apos;</span>,<br />&nbsp;&nbsp; <span className="code-green">&apos;database design&apos;</span><br />&nbsp; ]<br />{'}'};</pre></div>
-            <div className="art-footer"><span><b /> Available for opportunities</span><span>MY · 01.2026</span></div>
+            <div className="art-footer"><span><b /> Available for opportunities</span><span>MY · 11.2026</span></div>
             <div className="art-stamp"><span>UTM</span><small>COMPUTER<br />SCIENCE</small></div>
           </div>
         </div>
