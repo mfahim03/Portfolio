@@ -2,8 +2,9 @@ import Image from "next/image";
 import { getPortraitUrl, listResource } from "@/models/portfolio-model";
 import { initialContent } from "@/lib/portfolio-content";
 import TechIcon from "./tech-icon";
-import WorksBrowser from "./works/works-browser";
+import ProjectsDeck from "./works/projects-deck";
 import ThemeToggle from "./theme-toggle";
+import GlowCard from "./glow-card";
 import { codeProfilePortrait, codeProjectImages } from "@/lib/project-media";
 
 export const dynamic = "force-dynamic";
@@ -58,9 +59,9 @@ export default async function Home() {
         <div className="page-wrap"><SectionIntro eyebrow="BACKGROUND & EXPERIENCE" title="About me" number="01" />
           <div className="about-layout">
             <div className="timeline-column">
-              <div className="timeline-group"><div className="group-label"><span>01</span><h3>Education</h3></div><ol className="timeline-list" aria-label="Education">{education.map((item, index) => <li className="timeline-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.degree}</h4><span>{item.period}</span></div><p>{item.school}{item.detail ? ` · ${item.detail}` : ""}</p></div></li>)}</ol></div>
-              <div className="timeline-group"><div className="group-label"><span>02</span><h3>Work experience (Fresh Graduate)</h3></div><ol className="timeline-list" aria-label="Work experience">{experience.map((item, index) => <li className="timeline-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.role}</h4><span>{item.period}</span></div><p className="entry-org">{item.organization}</p><p>{item.summary}</p></div></li>)}</ol></div>
-              <div className="timeline-group"><div className="group-label"><span>03</span><h3>Certifications</h3></div><ol className="timeline-list" aria-label="Certifications">{certifications.map((item, index) => <li className="timeline-entry cert-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.name}</h4><span>{item.date}</span></div><p>{item.issuer}</p></div></li>)}</ol></div>
+              <GlowCard className="timeline-group"><div className="group-label"><span>01</span><h3>Education</h3></div><ol className="timeline-list" aria-label="Education">{education.map((item, index) => <li className="timeline-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.degree}</h4><span>{item.period}</span></div><p>{item.school}{item.detail ? ` · ${item.detail}` : ""}</p></div></li>)}</ol></GlowCard>
+              <GlowCard className="timeline-group"><div className="group-label"><span>02</span><h3>Work experience (Fresh Graduate)</h3></div><ol className="timeline-list" aria-label="Work experience">{experience.map((item, index) => <li className="timeline-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.role}</h4><span>{item.period}</span></div><p className="entry-org">{item.organization}</p><p>{item.summary}</p></div></li>)}</ol></GlowCard>
+              <GlowCard className="timeline-group"><div className="group-label"><span>03</span><h3>Certifications</h3></div><ol className="timeline-list" aria-label="Certifications">{certifications.map((item, index) => <li className="timeline-entry cert-entry" key={item.id}><span className="entry-index">{String(index + 1).padStart(2, "0")}</span><div className="entry-content"><div className="entry-top"><h4>{item.name}</h4><span>{item.date}</span></div><p>{item.issuer}</p></div></li>)}</ol></GlowCard>
             </div>
           </div>
         </div>
@@ -68,8 +69,8 @@ export default async function Home() {
 
       <section id="projects" className="content-section projects-section works-section">
         <div className="page-wrap"><div className="section-intro"><p className="eyebrow">SELECTED WORK · FRONTEND & BACKEND</p><h2>Projects I’ve built</h2><span className="section-number">02</span></div>
-          <div className="projects-intro"><p>Mobile apps, web systems and the architecture behind them. Choose a project to explore its screenshots and stack.</p><span>{String(visibleProjects.length).padStart(2, "0")} PROJECTS</span></div>
-          <WorksBrowser projects={visibleProjects} />
+          <div className="projects-intro"><p>Mobile apps, web systems and others work. Each folder shows the project image, stack and details together.</p><span>{String(visibleProjects.length).padStart(2, "0")} PROJECTS</span></div>
+          <ProjectsDeck projects={visibleProjects} />
         </div>
       </section>
 

@@ -1,7 +1,7 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "Muhammad Fahim",
+  title: "Muhammad Fahim | Software Engineering Portfolio",
   description: "Muhammad Fahim is a software engineering graduate focused on full-stack development, mobile applications and database systems.",
 };
 

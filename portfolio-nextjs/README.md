@@ -28,8 +28,11 @@ A full-stack personal portfolio built with Next.js 16, React 19 and Firebase. Th
 portfolio-nextjs/
 ├── app/                          # Next.js pages, layouts, styles and API routes
 │   ├── admin/                    # Admin frontend (.jsx)
+│   │   ├── admin-console.jsx
+│   │   └── page.jsx
 │   ├── api/                      # Backend HTTP route handlers (.js)
-│   ├── works/                    # Project browser frontend (.jsx)
+│   ├── works/
+│   │   └── projects-deck.jsx      # Interactive stacked project cards
 │   ├── globals.css               # Site styles and responsive layouts
 │   ├── layout.jsx                # Root frontend layout and metadata
 │   ├── page.jsx                  # Public portfolio frontend
@@ -146,6 +149,8 @@ Only authenticated requests for the configured verified admin email can create, 
 ### Upload through the admin area
 
 Open a project record, choose one or more screenshots and save. Images are uploaded to Firebase Storage and their download URLs are saved in the project record. Mobile projects render in phone frames; other project types render in browser-style frames.
+
+Project records can also include an optional **Website URL**, alongside demo, repository and Figma links. The website link appears on that project’s card when provided.
 
 ### Keep images in the codebase
 

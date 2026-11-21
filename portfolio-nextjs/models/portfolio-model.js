@@ -8,7 +8,7 @@ const resources = {
   certifications: { collection: "certifications", fields: ["name", "issuer", "date", "sort_order"], required: ["name", "issuer", "date"] },
   "tech-categories": { collection: "tech_categories", fields: ["name", "sort_order"], required: ["name"] },
   "tech-items": { collection: "tech_items", fields: ["name", "category_id", "icon_slug", "sort_order"], required: ["name", "category_id"] },
-  projects: { collection: "projects", fields: ["title", "project_type", "summary", "frontend", "backend", "technologies", "demo_url", "repo_url", "figma_url", "image_urls", "sort_order"], required: ["title", "project_type", "summary"] },
+  projects: { collection: "projects", fields: ["title", "project_type", "summary", "frontend", "backend", "technologies", "website_url", "demo_url", "repo_url", "figma_url", "image_urls", "sort_order"], required: ["title", "project_type", "summary"] },
 };
 let cachedToken;
 let tokenExpiresAt = 0;
@@ -150,7 +150,7 @@ function validate(resource, data, partial = false) {
   if (!Object.keys(values).length) throw new Error("Provide at least one supported field.");
   if (Object.hasOwn(values, "category_id")) values.category_id = String(values.category_id);
   if (Object.hasOwn(values, "project_type") && !["mobile", "web", "desktop", "other"].includes(values.project_type)) throw new Error("Choose a valid project type.");
-  for (const key of ["demo_url", "repo_url", "figma_url"]) if (values[key] && !/^https:\/\//i.test(values[key])) throw new Error(`${key} must start with https://.`);
+  for (const key of ["website_url", "demo_url", "repo_url", "figma_url"]) if (values[key] && !/^https:\/\//i.test(values[key])) throw new Error(`${key} must start with https://.`);
   return values;
 }
 
