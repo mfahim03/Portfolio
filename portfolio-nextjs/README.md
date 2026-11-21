@@ -27,14 +27,14 @@ A full-stack personal portfolio built with Next.js 16, React 19 and Firebase. Th
 ```text
 portfolio-nextjs/
 ├── app/                          # Next.js pages, layouts, styles and API routes
-│   ├── admin/                    # Admin sign-in and content management UI
-│   ├── api/                      # Server endpoints for records, uploads and auth
-│   ├── works/                    # Featured project browser and project gallery UI
+│   ├── admin/                    # Admin frontend (.jsx)
+│   ├── api/                      # Backend HTTP route handlers (.js)
+│   ├── works/                    # Project browser frontend (.jsx)
 │   ├── globals.css               # Site styles and responsive layouts
-│   ├── layout.js                 # Root layout and metadata
-│   ├── page.js                   # Public portfolio home page
-│   ├── tech-icon.js              # Technology and social icons
-│   └── theme-toggle.js           # Light/dark theme control
+│   ├── layout.jsx                # Root frontend layout and metadata
+│   ├── page.jsx                  # Public portfolio frontend
+│   ├── tech-icon.jsx             # Technology and social icons
+│   └── theme-toggle.jsx          # Light/dark theme control
 ├── controllers/
 │   └── portfolio-controller.js   # Request validation, auth checks and responses
 ├── lib/
@@ -54,6 +54,10 @@ portfolio-nextjs/
 ├── package.json                  # Dependencies and npm scripts
 └── README.md
 ```
+
+### Frontend and backend files
+
+Files ending in `.jsx` contain React UI: pages, layouts and interactive components. Backend API route handlers end in `.js` under `app/api/`; Firestore data access lives in `models/`, and request/authentication logic lives in `controllers/` and `lib/`. This naming convention makes the UI and server responsibilities easier to spot in the file list.
 
 ### MVC-inspired request flow
 
