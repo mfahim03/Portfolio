@@ -9,7 +9,7 @@ export const codeProjectImages = {
    "project-speed-trials": ["/speed1.png"],
    "project-cicd": ["/cicd1.png"],
    "project-katalon": ["/katalon1.png"],
-   "project-utmrunify": ["/utmrunify1.png", "/utmrunify2.png", "/utmrunify3.png"],  
+   "project-utmrunify": ["/utmrunify1.png", "/utmrunify2.png"],  
 };
 
 // Put a portrait at public/profile.jpg and set this to "/profile.jpg".
