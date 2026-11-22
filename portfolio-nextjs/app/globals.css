@@ -843,8 +843,3 @@ body { transition: background-color .25s ease, color .25s ease; }
 :root:not([data-theme="dark"]) .about-section { background-color: #fff; }
 :root:not([data-theme="dark"]) .about-section .glow-card.timeline-group { background-color: #fff; }
 :root[data-theme="dark"] .about-section { background-color: #181320; }
-@media (max-width: 640px) {
-  :root:not([data-theme="dark"]) { --about-ground: #eee6f7; }
-  :root:not([data-theme="dark"]) .about-section { background-color: var(--about-ground); }
-  :root:not([data-theme="dark"]) .about-section .glow-card.timeline-group { background-color: color-mix(in srgb, var(--surface) 90%, #1d1725); }
-}
