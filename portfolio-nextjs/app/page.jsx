@@ -1,8 +1,8 @@
-import Image from "next/image";
 import { getPortraitUrl, listResource } from "@/models/portfolio-model";
 import { initialContent } from "@/lib/portfolio-content";
 import TechIcon from "./tech-icon";
 import ProjectsDeck from "./works/projects-deck";
+import Lanyard from "@/components/LanyardOverlay";
 import ThemeToggle from "./theme-toggle";
 import GlowCard from "./glow-card";
 import { codeProfilePortrait, codeProjectImages } from "@/lib/project-media";
@@ -40,8 +40,11 @@ export default async function Home() {
         <div className="hero-inner page-wrap">
           <div className="hero-copy" data-enter>
             <p className="eyebrow"><span className="status-dot" /> SOFTWARE ENGINEER · MALAYSIA</p>
-            <div className="hero-name-row"><h1 id="hero-title">Muhammad<br /><span>Fahim.</span></h1>{portraitUrl ? <Image className="hero-portrait" src={portraitUrl} alt="Muhammad Fahim" width={168} height={200} unoptimized priority /> : <div className="hero-portrait hero-portrait-placeholder" aria-label="Profile photo can be added in Admin">F</div>}</div>
-            <p className="hero-lead">Software engineering graduate building full-stack applications, mobile products and the systems behind them.</p>
+            <div className="hero-identity">
+              <div className="hero-name-row"><h1 id="hero-title">Muhammad<br /><span>Fahim.</span></h1></div>
+              {!portraitUrl && <div className="hero-lanyard-slot hero-lanyard-placeholder" aria-label="Profile photo can be added in Admin">F</div>}
+              <p className="hero-lead">Software engineering graduate building full-stack applications, mobile products and the systems behind them.</p>
+            </div>
             <div className="hero-actions"><a className="button button-primary" href="#about">About me <span>↓</span></a><div className="hero-social-actions"><a className="text-link" href="https://github.com/mfahim03" target="_blank" rel="noreferrer"><TechIcon name="GitHub" />View GitHub <span>↗</span></a><a className="text-link" href="https://linkedin.com/in/muhammadfahim03" target="_blank" rel="noreferrer"><TechIcon name="LinkedIn" />LinkedIn <span>↗</span></a></div></div>
             <div className="hero-meta"><span>UTM · B.Comp.Sc. Software Engineering</span><span>2022 — 2026</span></div>
           </div>
@@ -53,6 +56,7 @@ export default async function Home() {
           </div>
         </div>
         <div className="hero-bottom page-wrap"><span>01 / 03</span><span>SCROLL TO EXPLORE</span><span>↓</span></div>
+        {portraitUrl && <Lanyard frontImage={portraitUrl} orientation="portrait" finish="matte" cornerRadius={0.12} size={0.26} strapLength={0.52} strapColor="#c7a7ff" metal="silver" breeze={0.18} damping={0.58} intro={false} interactive />}
       </section>
 
       <section id="about" className="content-section about-section">
